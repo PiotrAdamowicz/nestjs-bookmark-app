@@ -2,7 +2,7 @@ import { ForbiddenException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { PrismaClientKnownRequestError } from 'generated/prisma/runtime/library';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { AuthDto, AuthSigninDto } from './dto';
+import { AuthDto, AuthSignupDto } from './dto';
 import * as argon from 'argon2';
 import { ConfigService } from '@nestjs/config';
 
@@ -13,7 +13,7 @@ export class AuthService {
     private jwt: JwtService,
     private config: ConfigService,
   ) {}
-  async signup(dto: AuthSigninDto) {
+  async signup(dto: AuthSignupDto) {
     // geterate password hash
     const hash = await argon.hash(dto.password);
 

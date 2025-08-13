@@ -10,7 +10,7 @@ export class AuthDto {
   password: string;
 }
 
-export class AuthSigninDto extends AuthDto {
+export class AuthSignupDto extends AuthDto {
   @IsString()
   firstName: string;
 
