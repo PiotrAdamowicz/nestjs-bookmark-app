@@ -30,7 +30,8 @@
         "pretest:e2e": "pnpm db:test:restart",
         "test:e2e": "dotenv -e  .env.test -- jest --watch --no-cash --config ./test/jest-e2e.json",
         "db:test:studio": " npx dotenv -e .env.test -- prisma studio ",
-        "db:dev:studio": " npx dotenv -e .env -- prisma studio "
+        "db:dev:studio": " npx dotenv -e .env -- prisma studio ",
+        "postinstall": "prisma generate"
     },
     "dependencies": {
         "@nestjs/common": "^11.0.1",
