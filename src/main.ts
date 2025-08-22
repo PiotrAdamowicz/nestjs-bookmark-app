@@ -6,22 +6,10 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
 
-    const originOptions = () => {
-        if (
-            process.env.NODE_ENV === 'development' &&
-            process.env.FRONTEND_DOMAIN_LOCAL
-        ) {
-            return process.env.FRONTEND_DOMAIN_LOCAL;
-        }
-        return process.env.FRONTENT_DOMAIN;
-    };
-
-    if (process.env.NODE_ENV === 'development') {
-        app.enableCors({
-            origin: originOptions(),
-            credentials: true,
-        });
-    }
+    app.enableCors({
+        origin: process.env.FRONTENT_DOMAIN,
+        credentials: true,
+    });
 
     const config = new DocumentBuilder()
         .setTitle('Bookmarks API')
