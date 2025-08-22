@@ -16,7 +16,7 @@ export class AuthService {
     async signup(dto: AuthSignupDto) {
         // geterate password hash
         const hash = await argon.hash(dto.password);
-
+        console.log(dto);
         // save the new user in db
         try {
             const user = await this.prisma.user.create({
@@ -27,9 +27,9 @@ export class AuthService {
                     hash,
                 },
             });
-
             return this.signToken(user.id, user.email);
         } catch (error) {
+            console.error(error);
             if (error instanceof PrismaClientKnownRequestError) {
                 if (error.code === 'P2002') {
                     throw new ForbiddenException('Credentials taken');

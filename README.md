@@ -4,7 +4,8 @@ freeCodeCamp: [https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCa
 
 ## Hosted on Koyeb
 
-For now only postinstal scrip specific to koyeb deployment.
+- For now only postinstal scrip specific to koyeb deployment.
+- DB using Neon
 
 ### Techstack
 
