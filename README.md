@@ -10,3 +10,5 @@ freeCodeCamp: [https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCa
 ### Techstack
 
 - Nest js [docs.nestjs.com](https://docs.nestjs.com/)
+- Koyeb [app.koyeb.com](https://app.koyeb.com/)
+- Neon [console.neon.tech](https://console.neon.tech/)
